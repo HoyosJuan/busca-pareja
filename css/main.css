@@ -1,3 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #6f1e51;
+  background: -moz-linear-gradient(top, #6f1e51 0%, #5758bb 40%, #5758bb 47%, #5758bb 57%, #37348c 80%, #1b1464 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #6f1e51), color-stop(40%, #5758bb), color-stop(47%, #5758bb), color-stop(57%, #5758bb), color-stop(80%, #37348c), color-stop(100%, #1b1464));
+  background: -webkit-linear-gradient(top, #6f1e51 0%, #5758bb 40%, #5758bb 47%, #5758bb 57%, #37348c 80%, #1b1464 100%);
+  background: -o-linear-gradient(top, #6f1e51 0%, #5758bb 40%, #5758bb 47%, #5758bb 57%, #37348c 80%, #1b1464 100%);
+  background: -ms-linear-gradient(top, #6f1e51 0%, #5758bb 40%, #5758bb 47%, #5758bb 57%, #37348c 80%, #1b1464 100%);
+  background: linear-gradient(to bottom, #6f1e51 0%, #5758bb 40%, #5758bb 47%, #5758bb 57%, #37348c 80%, #1b1464 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f1e51', endColorstr='#1b1464', GradientType=0 );
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.menu {
+  position: fixed;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; }
+  .menu li {
+    padding: 5px;
+    text-align: center; }
+    .menu li a {
+      font-size: 20px;
+      color: white;
+      transition: all .8s ease; }
+      .menu li a span {
+        display: none; }
+    .menu li.menu-selected a {
+      color: #6f1e51; }
+    .menu li:hover a {
+      color: #6f1e51; }
+
+@media (max-width: 850px) {
+  .menu {
+    top: 88%;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0; }
+    .menu li a {
+      font-size: 1.125rem; }
+      .menu li a span {
+        display: block;
+        font-size: 1rem;
+        font-weight: 100; } }
 
 /*# sourceMappingURL=main.css.map */
