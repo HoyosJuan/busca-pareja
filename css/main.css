@@ -15,7 +15,10 @@ body {
   background: linear-gradient(to bottom, #6f1e51 0%, #5758bb 40%, #5758bb 47%, #5758bb 57%, #37348c 80%, #1b1464 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f1e51', endColorstr='#1b1464', GradientType=0 );
   font-size: 16px;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  top: 0;
+  left: 0; }
 
 ul {
   list-style: none; }
@@ -117,5 +120,114 @@ a {
         display: block;
         font-size: 1rem;
         font-weight: 100; } }
+.tablero {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 30px repeat(6, 1fr);
+  gap: 10px; }
+  .tablero .informacion-tablero {
+    grid-column: span 12;
+    border-bottom: 1px solid #f4f4f4; }
+  .tablero .carta:nth-child(1) {
+    animation-delay: 250ms; }
+    .tablero .carta:nth-child(1) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta:nth-child(2) {
+    animation-delay: 500ms; }
+    .tablero .carta:nth-child(2) .lado.frente {
+      background: #12CBC4; }
+  .tablero .carta:nth-child(3) {
+    animation-delay: 750ms; }
+    .tablero .carta:nth-child(3) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta:nth-child(4) {
+    animation-delay: 1000ms; }
+    .tablero .carta:nth-child(4) .lado.frente {
+      background: #12CBC4; }
+  .tablero .carta:nth-child(5) {
+    animation-delay: 1250ms; }
+    .tablero .carta:nth-child(5) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta:nth-child(6) {
+    animation-delay: 1500ms; }
+    .tablero .carta:nth-child(6) .lado.frente {
+      background: #12CBC4; }
+  .tablero .carta:nth-child(7) {
+    animation-delay: 1750ms; }
+    .tablero .carta:nth-child(7) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta:nth-child(8) {
+    animation-delay: 2000ms; }
+    .tablero .carta:nth-child(8) .lado.frente {
+      background: #12CBC4; }
+  .tablero .carta:nth-child(9) {
+    animation-delay: 2250ms; }
+    .tablero .carta:nth-child(9) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta:nth-child(10) {
+    animation-delay: 2500ms; }
+    .tablero .carta:nth-child(10) .lado.frente {
+      background: #12CBC4; }
+  .tablero .carta:nth-child(11) {
+    animation-delay: 2750ms; }
+    .tablero .carta:nth-child(11) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta:nth-child(12) {
+    animation-delay: 3000ms; }
+    .tablero .carta:nth-child(12) .lado.frente {
+      background: #12CBC4; }
+  .tablero .carta:nth-child(13) {
+    animation-delay: 3250ms; }
+    .tablero .carta:nth-child(13) .lado.frente {
+      background: #FFC312; }
+  .tablero .carta {
+    grid-column: span 2;
+    grid-row: span 3;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+    animation-name: rotacion;
+    animation-duration: 250ms;
+    animation-iteration-count: 5;
+    animation-timing-function: linear; }
+    .tablero .carta:hover {
+      transform: rotateY(180deg); }
+    .tablero .carta .lado {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      position: absolute;
+      border: 5px solid #6F1E51;
+      border-radius: 10px;
+      cursor: pointer; }
+      .tablero .carta .lado.frente {
+        background: yellow;
+        transform: rotateY(180deg); }
+      .tablero .carta .lado.atras {
+        background: #B53471;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center; }
+        .tablero .carta .lado.atras .ovalo {
+          background-color: #6F1E51;
+          height: 60%;
+          width: 50%;
+          margin: auto;
+          border-radius: 50%;
+          backface-visibility: hidden; }
+
+@keyframes rotacion {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg); }
+  100% {
+    transform: rotateX(0deg) rotateY(360deg); } }
 
 /*# sourceMappingURL=main.css.map */
