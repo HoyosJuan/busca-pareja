@@ -200,9 +200,8 @@ a {
     animation-name: rotacion;
     animation-duration: 250ms;
     animation-iteration-count: 5;
-    animation-timing-function: linear; }
-    .tablero .carta:hover {
-      transform: rotateY(180deg); }
+    animation-timing-function: linear;
+    transform: rotateY(0deg); }
     .tablero .carta .lado {
       width: 100%;
       height: 100%;
