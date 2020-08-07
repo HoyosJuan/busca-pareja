@@ -4,25 +4,29 @@ $(document).ready( () => {
   let nivel = Math.floor(Math.random() * (4-0))
   let dificultad = dificultades[nivel]
   let valores = ['#FFC312','#12CBC4','#ED4C67','#FFC312','#12CBC4','#ED4C67']
-  let cantCartas 
-  let tiempoDeJuego
+  let cantCartas
+  let minDeJuego 
+  let segDeJuego
   let virada_carta = 0
   let memoria_carta_ids = []
   let valor_memoria = []
   switch (dificultad) {
     case 'Facil':
       cantCartas = 6
-      tiempoDeJuego = '00:45'
+      minDeJuego = 0
+      segDeJuego = 46
       break;
     case 'Medio':
       cantCartas = 8
-      tiempoDeJuego = '01:00'
+      minDeJuego = 1
+      segDeJuego = 01
       valores.push('#B53471')
       valores.push('#B53471')
       break;
     case 'Dificil':
       cantCartas = 10
-      tiempoDeJuego = '01:15'
+      minDeJuego = 1
+      segDeJuego = 16
       valores.push('#B53471')
       valores.push('#1289A7')
       valores.push('#B53471')
@@ -30,7 +34,8 @@ $(document).ready( () => {
       break;
     case 'Imposible':
       cantCartas = 12
-      tiempoDeJuego = '01:30'
+      minDeJuego = 1
+      segDeJuego = 31
       valores.push('#B53471')
       valores.push('#1289A7')
       valores.push('#EA2027')
@@ -40,13 +45,14 @@ $(document).ready( () => {
       break; 
     default:
       cantCartas = 6
-      tiempoDeJuego = '00:45'
+      minDeJuego = 0
+      segDeJuego = 46
       break;
   }
   let informacionTablero = `<div class="informacion-tablero">
                               <p class="dificultad-tablero">Dificultad:${dificultad}</p>
                               <h3 class='titulo-tablero'>Reto Diario</h3>
-                              <p class="tiempo-tablero">Tiempo restante:${tiempoDeJuego}</p>
+                              <p class="tiempo-tablero">Tiempo restante:<span id='cuenta'></span></p>
                             </div>`
   jQuery(tablero).append(informacionTablero)
   /*Crear Cartas que ingreso en la tabla */
@@ -86,10 +92,10 @@ $(document).ready( () => {
               if(virada_carta == cantCartas){
                 setTimeout(() => {
                   alert("Horacio se la come")
+                  document.getElementById('tablero').innerHTML = "";
+                  jQuery(tablero).append(informacionTablero)
+                  crearCartas();
                 }, 800);
-                document.getElementById('tablero').innerHTML = "";
-                jQuery(tablero).append(informacionTablero)
-					      crearCartas();
               }
             }else{
               virarAtras()
@@ -98,6 +104,7 @@ $(document).ready( () => {
         }
       })
     } 
+    miCuenta(minDeJuego,segDeJuego)
   }
   const virarAtras = () =>{
     let carta_1 = document.getElementById(memoria_carta_ids[0])
@@ -109,6 +116,30 @@ $(document).ready( () => {
     
     valor_memoria = []
     memoria_carta_ids = []
+  }
+  // Mi propia cuenta regresiva
+  const miCuenta = (minutos, segundos) => {
+    let auxMin = minutos
+    let auxSeg = segundos
+    const el = document.getElementById('cuenta')
+    const tiempoActualizado = setInterval( () =>{
+      if(auxSeg==0){
+        auxMin -= 1
+        auxSeg = 60
+      }
+      auxSeg = ('0' + (auxSeg - 1)).slice(-2)
+      el.innerHTML =`0${auxMin}:${auxSeg}`
+      console.log(`0${auxMin}:${auxSeg}`)
+      auxSeg = parseInt(auxSeg,10)
+      if(auxSeg == 0 && auxMin == 0){
+        alert('El tiempo se acabo')
+        // virarAtras()
+        document.getElementById('tablero').innerHTML = "";
+        jQuery(tablero).append(informacionTablero)
+        crearCartas();
+        clearInterval(tiempoActualizado)
+      }
+    },1000)
   }
   crearCartas()
 })
