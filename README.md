@@ -1,0 +1,53 @@
+## Listado de cosas por hacer
+- Iniciar sesion
+- Registrarse
+- Inicio con opciones:
+  - Reto Diario
+  - Reto Semanal
+- Reto Diario
+  - Reto unico del dia 
+  - Guardar si se completo
+  - Desactivar si se completo
+  - Permitir el reintento si no se logro completarlo
+  - Dar premio si completo todos los retos diarios de una semana
+- Reto Semanal
+  - Una tematica por semana 
+    - Cartas españolas 
+    - Cartas francesas
+    - Series
+    - Peliculas
+      - Marvel
+      - Disney
+    - Shrek
+    - Anime
+      - Naruto
+      - DBZ
+      - Pokemon
+    - Memes
+  - Dar premio si completo al menos 5 de 7 retos de la semana
+  - Reto unico por dia manteniendo tematica
+  - Guardar si se completo
+  - Desactivar si se completo
+  - Permitir el reintento si no se logro completarlo
+- Calendario
+  - Marcar los dias que se jugo con circulo de color a elegir
+  - Marcar los dias que se obtuvo un premio con un dorado/amarillo
+  - Marcar los dias que se perdio el reto semanal 
+- Trofeos
+  - Cantidad de trofeos
+  - Fecha y nombre de trofeo
+  - Mostrar sombra de posibles trofeos
+- Ajustes
+  - Cambiar color trasero de la carta
+  - Cambiar color de fondo
+- Perfil
+  - Nombre
+  - Foto
+  - Cantidad de trofeos
+  - Max racha de dias jugados
+  - Cambiar Nombre
+  - Cambiar Img
+  - Cambiar contraseña
+  - Salir Cuenta
+
+
