@@ -1,8 +1,10 @@
 $(document).ready( () => {
   const tablero = $('#tablero')
-  let dificultades = ['Facil', 'Medio', 'Dificil', 'Imposible']
-  let nivel = Math.floor(Math.random() * (4-0))
-  let dificultad = dificultades[nivel]
+  let dificultad = localStorage.getItem('dificultad')
+  if(dificultad=='Aleatorio'){
+    let dificultades = ['Facil', 'Medio', 'Dificil', 'Imposible']
+    dificultad = dificultades[Math.floor(Math.random() * (4-0))]
+  }
   let colores = [
                 '#f7f1e3','#CAD3C8','#84817a','#3d3d3d',
                 '#fffa65','#FFC312','#F79F1F','#EE5A24',
@@ -21,7 +23,6 @@ $(document).ready( () => {
   }
   let modoCartas = ['colores', 'numeros']
   let modo = modoCartas[Math.floor(Math.random() * (2-0))]
-  console.log(modo)
   let valores = []    
   let cantCartas
   let minDeJuego 

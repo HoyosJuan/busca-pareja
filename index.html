@@ -10,56 +10,24 @@
 </head>
 <body>
 
-  <!--Menu-->
-  <ul class="menu">
-    <li class='menu-selected'>
-      <a href="#">
-        <i class="fas fa-home"></i>
-        <span>Inicio</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fas fa-calendar"></i>
-        <span>Reto Diario</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fas fa-trophy"></i>
-        <span>Trofeos</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fas fa-cog"></i>
-        <span>Ajustes</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fas fa-user"></i>
-        <span>Personal</span>
-      </a>
-    </li>
-  </ul>
-
   <!--Recomendado-->
   <div class='modo-recomendado'>
     <div class="reto reto-diario">
-      <h3 class="titulo-reto">Reto Diario</h3>
+      <h3 class="titulo-reto">Memorizando las cartas</h3>
       <p class='fecha-reto' id='fechaHoy'></p>
-      <a href="./pages/retoDiario.html" class='iniciar-reto'>Jugar</a>
-    </div>
-    <div class="reto reto-semanal">
-      <h3 class="titulo-reto">Reto Semanal</h3>
-      <p class='fecha-reto' id='fechaSemana'></p>
-      <a href="./pages/retoSemanal.html" class='iniciar-reto'>Jugar</a>
+      <p class="fecha-reto" style='text-align: left;'>Eliga la dificultad del juego:</p>
+      <div class="dificultades">
+        <a href="./pages/retoDiario.html" class='iniciar-reto' id='aleatorio'>Aleatorio</a>
+        <a href="./pages/retoDiario.html" class='btn-dificultad' id='facil'>Facil</a>
+        <a href="./pages/retoDiario.html" class='btn-dificultad' id='medio'>Medio</a>
+        <a href="./pages/retoDiario.html" class='btn-dificultad' id='dificil'>Dificil</a>
+        <a href="./pages/retoDiario.html" class='btn-dificultad' id='imposible'>Imposible</a>
+      </div>
     </div>
   </div>
 
   <script src="./js/jquery.js"></script>
   <script src="./js/fechas.js"></script>
-
+  <script src="./js/dificultad.js"></script>
 </body>
 </html>

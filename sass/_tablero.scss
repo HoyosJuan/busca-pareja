@@ -1,0 +1,87 @@
+.tablero{
+  position: absolute;
+  top:5%;
+  bottom: 5%;
+  left:5%;
+  right:5%;
+  background: rgba(255, 255, 255, .25);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 30px repeat(12, 1fr);
+  gap: 10px;
+  .informacion-tablero{
+    grid-column: span 12;
+    border-bottom: 1px solid #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+    .tiempo-tablero{
+      display: flex;
+      justify-content: center;
+      // #cuenta{
+      // }
+    }
+  }
+  .carta{
+    grid-column: span 2;
+    grid-row: span 3;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+    animation-name: rotacion;
+    animation-duration: 250ms;
+    animation-iteration-count: 5;
+    animation-timing-function: linear;
+    transform: rotateY(0deg);
+    .lado{
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      position: absolute;
+      border:5px solid #6F1E51;
+      border-radius: 10px;
+      cursor: pointer;
+      &.frente{
+        background: white;
+        transform:rotateY(180deg);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        p{
+          align-self: center;
+          color:black;
+          text-align: center;
+          font-size: 3rem;
+        }
+      }
+      &.atras{
+        background: #B53471;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        .ovalo{
+          background-color: #6F1E51;
+          height: 60%;
+          width: 50%;
+          margin: auto;
+          border-radius: 50%;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: visible;
+          -moz-backface-visibility: hidden;
+        }
+      }
+    }
+  }
+}
+@keyframes rotacion{
+  0%{
+    transform: rotateX(0deg) rotateY(0deg)
+  }
+  100%{
+    transform: rotateX(0deg) rotateY(360deg)
+  }
+}
